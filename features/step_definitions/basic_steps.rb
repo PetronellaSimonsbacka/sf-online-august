@@ -57,13 +57,17 @@ def goto(page)
   when 'restaurant'
     restaurant_path
   when 'menu'
-    menu_index_path
+    menus_path
   when 'add menu'
     new_menu_path
   when 'Create Dish'
     new_dish_path
   when 'cart'
     carts_path
+  when 'register'
+    new_user_registration_path
+  when 'user registration'
+    user_registration_path
   else
     root_path
   end
