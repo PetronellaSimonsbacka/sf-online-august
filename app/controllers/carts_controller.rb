@@ -1,6 +1,9 @@
 class CartsController < ApplicationController
   def index
+    #binding.pry
     @cart = ShoppingCart.first
+    binding.pry
+    #find(params[:item_id])
   end
 
   def add_item
