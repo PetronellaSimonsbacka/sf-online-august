@@ -1,7 +1,6 @@
 class CartsController < ApplicationController
   def index
     @cart = ShoppingCart.first
-    #find(params[:item_id])
   end
 
   def add_item
