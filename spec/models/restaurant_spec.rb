@@ -5,7 +5,9 @@ RSpec.describe Restaurant, type: :model do
   describe "regression test" do
     it { is_expected.to have_db_column :name }
     it { is_expected.to have_db_column :description}
-    it { is_expected.to have_db_column :address}
+    it { is_expected.to have_db_column :street}
+    it { is_expected.to have_db_column :zipcode}
+    it { is_expected.to have_db_column :town}
     it {is_expected.to belong_to :user}
     it {is_expected.to validate_presence_of :user}
   end
