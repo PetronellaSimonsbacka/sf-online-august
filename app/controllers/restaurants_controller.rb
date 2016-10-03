@@ -6,4 +6,12 @@ class RestaurantsController < ApplicationController
     @restaurant = Restaurant.new
   end
 
+  def create
+    render :show
+  end
+
+  def show
+  end
+
+
 end

@@ -7,9 +7,13 @@ Background:
 
 Scenario: I create a restaurant
   Given I am on the "create restaurant" page
-  When I fill in "Name" with "Awesome Restaurant"
-  And I fill in "Description" with "Totally edible food"
-  And I fill in "Address" with "24 Restaurant Street"
+  When I fill in:
+    | element     | content              |
+    | Name        | Awesome restaurant   |
+    | Description | Good food            |
+    | Street      | Holtermansgatan 17d  |
+    | Zipcode     | 41235                |
+    | Town        | Göteborg             |
   And I click the "Create" button
   Then I should be on the restaurant page for "Awesome Restaurant"
   And I should see "Awesome Restaurant"
