@@ -22,6 +22,9 @@ class RestaurantsController < ApplicationController
   def show
   end
 
+  def edit
+  end
+
   private
 
   def check_for_exisiting_restaurant
