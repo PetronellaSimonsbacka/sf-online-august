@@ -15,5 +15,6 @@ Scenario: I create a restaurant
     | Zipcode     | 41235                |
     | Town        | Göteborg             |
   And I click the "Create" button
-  Then I should be on the restaurant page for "Awesome Restaurant"
-  And I should see "Awesome Restaurant"
+#  Then I should be on the restaurant page for "Awesome Restaurant"
+  And I should see "here is the show"
+  And I should see "Awesome restaurant"
