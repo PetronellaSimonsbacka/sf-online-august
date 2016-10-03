@@ -27,11 +27,11 @@ Given(/^the "([^"]*)" restaurant exists$/) do |restaurant|
   FactoryGirl.create(:restaurant, name: restaurant, user: user)
 end
 
-Given(/^I am on the restaurant page for "([^"]*)"$/) do |arg1|
+Given(/^I am on the restaurant page for "([^"]*)"$/) do |name|
   restaurant_page = Restaurant.first
   visit(restaurant_path(restaurant_page))
 end
 
-Then(/^I should be on the edit restaurant page for "([^"]*)"$/) do |arg1|
-  pending # Write code here that turns the phrase above into concrete actions
+Then(/^I should be on the edit restaurant page for "([^"]*)"$/) do |name|
+  expect(current_path).to eq edit_restaurant_path
 end
