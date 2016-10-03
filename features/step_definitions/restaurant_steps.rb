@@ -21,3 +21,16 @@ Given(/^I already have a restaurant$/) do
     And I click the "Create" button
   }
 end
+
+Given(/^the "([^"]*)" restaurant exists$/) do |restaurant|
+  user = User.first
+  FactoryGirl.create(:restaurant, name: restaurant, user: user)
+end
+
+Given(/^I am on the restaurant page for "([^"]*)"$/) do |arg1|
+  pending # Write code here that turns the phrase above into concrete actions
+end
+
+Then(/^I should be on the edit restaurant page for "([^"]*)"$/) do |arg1|
+  pending # Write code here that turns the phrase above into concrete actions
+end
