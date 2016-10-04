@@ -18,7 +18,7 @@ Given(/^I already have a restaurant$/) do
       | Street      | Holtermansgatan 17d  |
       | Zipcode     | 41235                |
       | Town        | Göteborg             |
-    And I click the "Create" button
+    And I click the "Submit" button
   }
 end
 
@@ -28,11 +28,25 @@ Given(/^the "([^"]*)" restaurant exists$/) do |restaurant|
 end
 
 Given(/^I am on the restaurant page for "([^"]*)"$/) do |name|
-  restaurant_page = Restaurant.first
-  visit(restaurant_path(restaurant_page))
+  restaurant = Restaurant.find_by(name: name)
+  visit(restaurant_path(restaurant))
 end
 
 Then(/^I should be on the edit restaurant page for "([^"]*)"$/) do |restaurant|
   restaurant_id = Restaurant.find_by(name: restaurant)
   expect(current_path).to eq edit_restaurant_path(id: restaurant_id)
 end
+<<<<<<< HEAD
+=======
+
+Then(/^I should be on the show page for "([^"]*)"$/) do |restaurant|
+  restaurant_id = Restaurant.find_by(name: restaurant)
+  expect(current_path).to eq restaurant_path(id: restaurant_id)
+end
+
+
+#Then(/^I should be on the "([^"]*)" page for "([^"]*)"$/) do |page, restaurant|
+#  restaurant_id = Restaurant.find_by(name: restaurant)
+#  expect(current_path).to eq edit_restaurant_path(id: restaurant_id)
+#end
+>>>>>>> f536fe74ef71c32c016ef5385234228cf06ae39b
