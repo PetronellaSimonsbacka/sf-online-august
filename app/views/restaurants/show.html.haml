@@ -2,4 +2,4 @@ here is the show for restaurants
 
 = @restaurant.name
 
-%button{:onclick => "window.location.href='restaurants#edit'"} Edit
+= link_to 'Edit', edit_restaurant_path(@restaurant), class: "btn btn-success"
