@@ -8,5 +8,5 @@ Feature: As a restaurant Owner
 
 Scenario: I edit my restaurant
   Given I am on the restaurant page for "Awesome"
-  And I click the "Edit" button
+  And I click the link "Edit"
   Then I should be on the edit restaurant page for "Awesome"
