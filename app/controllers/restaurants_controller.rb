@@ -1,6 +1,7 @@
 class RestaurantsController < ApplicationController
   load_and_authorize_resource # potentially refactor this into ApplicationController
-  before_action :check_for_exisiting_restaurant, only: :new
+  before_action :check_for_exisiting_restaurant, only: [:new]
+  before_action :find_restaurant_from_params, only: [:show, :edit, :update]
 
   def index
   end
@@ -23,8 +24,18 @@ class RestaurantsController < ApplicationController
   end
 
   def edit
-    @restaurant = Restaurant.find(params[:id])
   end
+
+  def update
+    if @restaurant.update_attributes(restaurant_params)
+      render :show
+    else
+      flash[:alert] = @restaurant.errors.full_messages.first
+      @restaurant.reload
+      render :edit
+    end
+  end
+
 
   private
 
@@ -33,6 +44,10 @@ class RestaurantsController < ApplicationController
       flash[:alert] = "You already have a restaurant, how many do you need?"
       redirect_back(fallback_location: root_path)
     end
+  end
+
+  def find_restaurant_from_params
+    @restaurant = Restaurant.find(params[:id])
   end
 
   def restaurant_params
