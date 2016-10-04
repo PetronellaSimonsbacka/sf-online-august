@@ -36,17 +36,8 @@ Then(/^I should be on the edit restaurant page for "([^"]*)"$/) do |restaurant|
   restaurant_id = Restaurant.find_by(name: restaurant)
   expect(current_path).to eq edit_restaurant_path(id: restaurant_id)
 end
-<<<<<<< HEAD
-=======
 
 Then(/^I should be on the show page for "([^"]*)"$/) do |restaurant|
   restaurant_id = Restaurant.find_by(name: restaurant)
   expect(current_path).to eq restaurant_path(id: restaurant_id)
 end
-
-
-#Then(/^I should be on the "([^"]*)" page for "([^"]*)"$/) do |page, restaurant|
-#  restaurant_id = Restaurant.find_by(name: restaurant)
-#  expect(current_path).to eq edit_restaurant_path(id: restaurant_id)
-#end
->>>>>>> f536fe74ef71c32c016ef5385234228cf06ae39b
