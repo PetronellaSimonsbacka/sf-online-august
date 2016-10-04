@@ -22,6 +22,10 @@ class RestaurantsController < ApplicationController
   def show
   end
 
+  def edit
+    @restaurant = Restaurant.find(params[:id])
+  end
+
   private
 
   def check_for_exisiting_restaurant

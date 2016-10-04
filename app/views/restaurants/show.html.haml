@@ -2,5 +2,4 @@ here is the show for restaurants
 
 = @restaurant.name
 
-
-%button{:type => "button"} Edit
+= link_to 'Edit', edit_restaurant_path(@restaurant), class: "btn btn-success"
