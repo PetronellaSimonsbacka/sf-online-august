@@ -95,10 +95,6 @@ When(/^I log in as "([^"]*)"$/) do |name|
   login_as(user, scope: :user)
 end
 
-When(/^I click on the link "([^"]*)"$/) do |arg1|
-  pending # Write code here that turns the phrase above into concrete actions
-end
-
 private
 def set_user(name)
   @user = User.find_by(name: name)
