@@ -22,13 +22,15 @@ Feature: As a restaurant Owner
     Then I should see "Name can't be blank"
 
   Scenario: I should be the only one who can edit my restaurant
+    Given the following users exist
+      | name  | email         | role  |
+      | Anna  | anna@food.se  | owner |
+      | Janne | janne@food.se | owner |
     And the following restaurants exists
       | name | description | town | owner |
-      | McD  | Nice food   | Home | Anna  |
-    Given the following owners exist:
-      | name | email          |
-      | Kiki | kiki@owner.com |
-    When I logged in as "Kiki"
-    And I visit the restaurant page for "McD"
-    And I click on the link "Edit"
+      | MAC  | Nice food   | Home | Anna  |
+    When I log in as "Janne"
+    And I visit the restaurant page for "Anna"
+    And I click the link "Edit"
+    Then show me the page
     Then I should see "You are not authorized to access this page."
