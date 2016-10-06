@@ -53,7 +53,7 @@ Then(/^show me the page$/) do
   save_and_open_page
 end
 
-Then(/^I should be able to select "([^"]*)" from "([^"]*)"$/) do |category, list|
+Then(/^I select "([^"]*)" from "([^"]*)"$/) do |category, list|
   page.select category, from: list
 end
 

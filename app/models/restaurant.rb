@@ -1,6 +1,6 @@
 class Restaurant < ApplicationRecord
 
-  CATEGORIES = ['Pizza', 'Sushi', 'Italian', 'Thai', 'Fast Food', 'BBQ', 'French', 'Traditional', 'Vegan', 'Seafood', 'Texmex']
+  CATEGORIES = ['Pizza', 'Sushi', 'Italian', 'Thai', 'Fast Food', 'BBQ', 'French', 'Traditional', 'Vegan', 'Seafood', 'Texmex', 'Other']
 
   belongs_to :user
   has_many :menus

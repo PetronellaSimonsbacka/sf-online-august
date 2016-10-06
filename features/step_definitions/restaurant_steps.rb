@@ -18,6 +18,7 @@ Given(/^I already have a restaurant$/) do
       | Street      | Holtermansgatan 17d  |
       | Zipcode     | 41235                |
       | Town        | Göteborg             |
+    Then I select "Thai" from "Category"
     And I click the "Submit" button
   }
 end
@@ -37,14 +38,14 @@ Then(/^I should be on the edit restaurant page for "([^"]*)"$/) do |restaurant|
   expect(current_path).to eq edit_restaurant_path(id: restaurant)
 end
 
-Then(/^I should be on the show page for "([^"]*)"$/) do |restaurant|
-  restaurant = Restaurant.find_by(name: restaurant)
-  expect(current_path).to eq restaurant_path(id: restaurant)
+Then(/^I should be on the show page for "([^"]*)"$/) do |name|
+  restaurant = Restaurant.find_by(name: name)
+  expect(current_path).to eq restaurant_path(restaurant)
 end
 
-Given(/^I am on the edit restaurant page for "([^"]*)"$/) do |restaurant|
-  restaurant = Restaurant.find_by(name: restaurant)
-  visit edit_restaurant_path(id: restaurant)
+Given(/^I am on the edit restaurant page for "([^"]*)"$/) do |name|
+  restaurant = Restaurant.find_by(name: name)
+  visit edit_restaurant_path(restaurant)
 end
 
 
