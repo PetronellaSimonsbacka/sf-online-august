@@ -24,3 +24,5 @@ coverage/
 
 #vendor files
 vendor/bundle/
+
+.env
