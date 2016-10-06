@@ -18,7 +18,6 @@ Given(/^I already have a restaurant$/) do
       | Street      | Holtermansgatan 17d  |
       | Zipcode     | 41235                |
       | Town        | Göteborg             |
-    Then I select "Thai" from "Category"
     And I click the "Submit" button
   }
 end
