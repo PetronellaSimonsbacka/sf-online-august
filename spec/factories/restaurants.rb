@@ -1,7 +1,7 @@
 FactoryGirl.define do
   factory :restaurant do
     name 'MyString'
-    category 'MyCategory'
+    category 'Thai'
     description 'MyText'
     street 'Fjällgatan 3'
     zipcode '41463'
