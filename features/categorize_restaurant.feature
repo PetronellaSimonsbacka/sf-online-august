@@ -17,4 +17,3 @@ Feature: As a restaurant Owner
     Then I should be on the show page for "Awesome restaurant"
     And I should see "Thai"
 
-

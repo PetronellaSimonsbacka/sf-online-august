@@ -23,6 +23,11 @@ RSpec.describe Restaurant, type: :model do
     it { is_expected.to validate_presence_of :street}
     it { is_expected.to validate_presence_of :zipcode}
     it { is_expected.to validate_presence_of :town}
+
+    it 'does not allow custom categories' do
+      category = FactoryGirl.build(:restaurant, category: 'custom_categories')
+      expect(category.save).to be_falsey
+    end
   end
 
   describe 'Factory' do

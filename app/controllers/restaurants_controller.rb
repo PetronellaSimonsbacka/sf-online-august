@@ -2,7 +2,7 @@ class RestaurantsController < ApplicationController
   load_and_authorize_resource # potentially refactor this into ApplicationController
   before_action :check_for_exisiting_restaurant, only: [:new]
   before_action :find_restaurant_from_params, only: [:show, :edit, :update]
-  before_action :restaurant_categories
+  # before_action :restaurant_categories
   def index
     gon.restaurants = Restaurant.all
   end
@@ -47,9 +47,12 @@ class RestaurantsController < ApplicationController
     end
   end
 
+=begin
   def restaurant_categories
     @categories = ['Pizza', 'Sushi', 'Italian', 'Thai', 'Fast Food', 'BBQ', 'French', 'Traditional', 'Vegan', 'Seafood', 'Texmex']
   end
+=end
+
   def find_restaurant_from_params
     @restaurant = Restaurant.find(params[:id])
   end
