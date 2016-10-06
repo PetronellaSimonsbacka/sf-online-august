@@ -14,6 +14,13 @@ Feature: As a restaurant Owner
     And I am on the edit restaurant page for "Awesome restaurant"
     Then I should be able to select "Thai" from "Category"
     When I click the "Submit" button
-    Then I should be on the show page for "Awesome restaurant"
+    Then I should be on the "show" page for "Awesome restaurant"
     And I should see "Thai"
 
+  Scenario: I leave category blank
+    Given I already have a restaurant
+    And I am on the edit restaurant page for "Awesome restaurant"
+    And I select " " from "Category"
+    And I click the "Submit" button
+    Then I should be on the "edit" page for "Awesome restaurant"
+    And I should see "Category can´t be blank"
