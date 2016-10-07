@@ -3,6 +3,11 @@ Then(/^I should be on the restaurant page for "([^"]*)"$/) do |name|
   expect(current_path).to eq restaurant_path(restaurant)
 end
 
+Given(/^I am on the restaurant page for "([^"]*)"$/) do |name|
+  restaurant = Restaurant.find_by(name: name)
+  visit restaurant_path(restaurant)
+end
+
 Given(/^I am logged in as a restaurant owner$/) do
   user = FactoryGirl.create(:user, role: 'owner')
   login_as(user, scope: :user)
@@ -22,6 +27,7 @@ Given(/^I already have a restaurant$/) do
   }
 end
 
+<<<<<<< HEAD
 Given(/^the "([^"]*)" restaurant exists$/) do |restaurant|
   user = User.first
   FactoryGirl.create(:restaurant, name: restaurant, user: user)
@@ -89,6 +95,7 @@ Given(/^the following restaurants exists$/) do |table|
                                     user: user)
   end
 end
+
 
 private
 def set_user(name)
